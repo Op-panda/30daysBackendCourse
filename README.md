@@ -2,7 +2,7 @@
 30 days of learning in single md file
 
 ## Day 1
-- Eficient storage and delivery of info
+- Efficient storage and delivery of info
 - customised user experience 
 - controlled access to content
 - Notifications and communication
@@ -82,4 +82,39 @@ else{
 res.end(fileData);
 }})
 ```
+### Status codes 
+- Each response has its associated status code.
+- response comes with HTTP header which contains status code.
 
+#### Benefit
+- Debugging 
+- SEO
+
+#### Codes
+- 100 to 199   -> Informational Purpose 
+- 200 to 299   -> success
+- 300 to 399   -> redirect
+- 400 to 499   -> client error 
+- 500 to 599   -> server error (crash, server down)
+
+#### Most used codes are: 
+- 200, 201, 307, 308, 400, 404, 500, 502 
+
+#### Implementing status code in server 
+```
+Switch(req.url){
+case '/about':
+path += '/about.html'
+res.StatusCode = 200;
+break;
+}
+```
+
+#### How to redirect to another route
+```
+case '/about-me':
+res.StatusCode=301;
+res.setHeader('Location', '/about');
+res.end();
+break;
+```
