@@ -61,6 +61,7 @@ res.end();}
 ```
 #### Q. Lets take an example where, request url is to be fetched and displayed as a resdponse on browser.
 Let path = './views';
+```
 switch(req.url){
 case '/':
 path+= '/index.html';
