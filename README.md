@@ -39,3 +39,22 @@ console.log('Request from browser to server');
 server.listen(3000, 'localhost', ()={
 console.log('server is listening on port 3000');});
 ``` 
+## day 3
+
+suppose your folder structure looks like this, 
+### Views(Folder)
+- 404.html
+- about.html
+- index.html
+
+### To read file and display content on browser,
+```
+fs.readFile('./views/index.html', (err, fileData)=>{
+if(err){
+console.log(err);
+}
+else{
+res.write(fileData);
+res.end();}
+
+//we can also write, res.end(fileData); 
