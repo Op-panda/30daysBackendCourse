@@ -16,5 +16,26 @@
 - DNS (Domain Name System) is a server that is responsible for mapping in domain name and the ip address.
 - HTTP (HyperText Transfer Protocol is a set of communication rules between client & Server).
 
+## Day 2
 
+### create a node server
+
+const http = require('http');
+const server = http.createServer((req, res)) = {        
+console.log('Request from browser to server');
+
+//REQUEST
+//console.log(req.method())
+//req.method -> GET, POST, etc.
+//req.url -> url from which req has been made 
+
+// RESPONSE
+//res.setHeader('Content-Type', 'text/plain');
+//res.write('Hello world :)');
+//res.end();
+};
+
+//server listening on specific port
+server.listen(3000, 'localhost', ()={
+console.log('server is listening on port 3000');});
  
