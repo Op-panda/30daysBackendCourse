@@ -42,12 +42,12 @@ console.log('server is listening on port 3000');});
 ## day 3
 
 suppose your folder structure looks like this, 
-### Views(Folder)
+#### Views(Folder)
 - 404.html
 - about.html
 - index.html
 
-### To read file and display content on browser,
+#### To read file and display content on browser,
 ```
 fs.readFile('./views/index.html', (err, fileData)=>{
 if(err){
@@ -57,4 +57,28 @@ else{
 res.write(fileData);
 res.end();}
 
-//we can also write, res.end(fileData); 
+//we can also write, res.end(fileData);
+```
+#### Q. Lets take an example where, request url is to be fetched and displayed as a resdponse on browser.
+Let path = './views';
+switch(req.url){
+case '/':
+path+= '/index.html';
+break;
+case '/about':
+path+= '/about.html';
+break;
+
+default:
+path+= '/404.html';
+}
+
+fs.readFile(path, (err, fileData)=>{
+if(err){
+console.log(err);
+}
+else{
+res.end(fileData);
+}})
+```
+
