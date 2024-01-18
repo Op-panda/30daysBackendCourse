@@ -19,7 +19,7 @@
 ## Day 2
 
 ### create a node server
-
+```
 const http = require('http');
 const server = http.createServer((req, res)) = {        
 console.log('Request from browser to server');
@@ -38,4 +38,4 @@ console.log('Request from browser to server');
 //server listening on specific port
 server.listen(3000, 'localhost', ()={
 console.log('server is listening on port 3000');});
- 
+``` 
